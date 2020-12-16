@@ -4,12 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Teacher extends Person{
-    private List<Courses> courseTaught = new ArrayList<>();
+    private Courses courses;
     private List<ClassRooms> classRoomAssigned = new ArrayList<>();
     private Student student;
 
-    public List<Courses> getCourseTaught() {
-        return courseTaught;
+    public Teacher(String name) {
+        super(name);
+       this.courses = new Courses(courses.getCourseId(), courses.getCourseName(), courses.getCourseTeacher());
+
+    }
+
+    public Courses getCourses() {
+        return courses;
+    }
+
+    public Student getStudent() {
+        return student;
     }
 
     public List<ClassRooms> getClassRoomAssigned() {

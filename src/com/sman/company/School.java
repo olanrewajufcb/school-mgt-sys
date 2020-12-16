@@ -26,12 +26,12 @@ public class School {
         return schoolName;
     }
 
-    public void getStudentsName(){
-        Iterator i = students.iterator();
-        while (i.hasNext()){
-            System.out.println(i.next());
-        }
-
-    }
+//    public void getStudentsName(){
+//        Iterator i = students.iterator();
+//        while (i.hasNext()){
+//            System.out.println(i.next());
+//        }
+//
+//    }
 
 }

@@ -1,5 +1,6 @@
 package com.sman.company;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Principal extends Staff{
@@ -7,12 +8,15 @@ public class Principal extends Staff{
     private School school;
     private Teacher teacher;
     private ClassRooms classRoom;
+    private Courses courses;
 
 //    School school =
     public Principal(String name, int age, String post, Boolean isAcamedicStaff, String schoolName, Student student) {
         super(name, age, post, isAcamedicStaff, schoolName);
         this.student = student;
         this.school = new School(schoolName);
+        this.courses = new Courses(courses.getCourseId(), courses.getCourseName(),courses.getCourseTeacher());
+        this.teacher = new Teacher(name);
     }
 
 
@@ -33,9 +37,9 @@ public class Principal extends Staff{
         return student;
     }
 
-    public void setTeacher(Teacher teacher){
-        this.teacher = teacher;
-    }
+//    public void setTeacher(Teacher teacher){
+//        this.teacher = teacher;
+//    }
 
     public Teacher getTeacher(){
         return  teacher;
@@ -54,13 +58,17 @@ public class Principal extends Staff{
 
 
     // The principal can admit new student by calling this method
-    public void admitStudent(Student student){
+    public String admitStudent(Student student){
         school.getStudents().add(student);
+        return student.getName();
     }
 
+    public Courses getCourses() {
+        return courses;
+    }
 
-    public void assignCourseToTeacher(Courses course){
-        teacher.getCourseTaught().add(course);
+    public void assignCourseToTeacher(){
+        teacher.getCourses();
     }
 
     public void assignClassRoomToTeacher(ClassRooms classRoom){

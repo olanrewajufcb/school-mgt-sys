@@ -1,16 +1,13 @@
 package com.sman.company;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import org.junit.Test;
 
-public class Main {
+import static org.junit.Assert.*;
 
-    public static void main(String[] args) {
-
+public class PrincipalTest {
     School school = new School("MKC");
     Staff staff = new Staff("Ade", 33, "Admin", false, "MKC");
-    Courses courses = new Courses("AD3", "English","Adimula");
+    Courses courses = new Courses("AD3", "English","Mr Ballard");
     ClassRooms classRoom =new ClassRooms("Primary 6");
     Student student = new Student("Mustopha",15,"AbN",courses,classRoom);
     Student student2 = new Student("Moses",15,"AbN12",courses,classRoom);
@@ -18,26 +15,23 @@ public class Main {
     Student student4 = new Student("Bilal",12,"A12N",courses,classRoom);
     Student student5 = new Student("Buhari",15,"AhbN",courses,classRoom);
 
-    Teacher teacher = new Teacher("Adimula");
-
     Principal principal = new Principal("Dr Badmus", 35, "Principal", false, "MKC", student);
+    @Test
+    public void suspend() {
+
+    }
+
+    @Test
+    public void admitStudent() {
 
         principal.admitStudent(student);
         principal.admitStudent(student2);
         principal.admitStudent(student3);
-        principal.admitStudent(student4);
-        principal.admitStudent(student5);
 
-        principal.suspend(student2);
-        System.out.println("Student 2 removed");
+        assertEquals("Mustopha",principal.admitStudent(student));
+    }
 
-        principal.getTeacher().getCourses();
-
-        System.out.println(school.getStudents().get(1).getName());
-  System.out.println(school.getStudents().get(1).getStudentId());
-
-
-
-
+    @Test
+    public void assignCourseToTeacher() {
     }
 }
